@@ -1,6 +1,6 @@
-# Dev log — 2026 Epic AI MegaJam entry (working title pending)
+# Dev log — Tip the Scales, an entry for the 2026 Epic AI MegaJam (team One Man Raft)
 
-One human, many agents. The human is the game director, who decides what the game is, playtests, records the video and submits. AI agents do the production work: code, scene, effects, audio, builds. This log is written during the jam, entry by entry, so that the whole process is visible.
+One human, many agents. The human is the game director, who decides what the game is, playtests and submits. AI agents do the production work: code, scene, effects, audio, builds, and the gameplay video, which the director watches and accepts. This log is written during the jam, entry by entry, so that the whole process is visible.
 
 Theme: "Director's Cut". Our reading: a personal cut of an ordinary mechanic. We take fishing and make our own version of it.
 
@@ -857,6 +857,11 @@ The director looked at the frame that compares the flat fish with the thin 3D fi
 - What remains is the link itself, because the jury must be able to open it without an invitation. He left the way to the orchestrator. Chosen (revocable): a separate public repository with documents only - this log, the agent briefs, the director's decisions and the agent contract - and no source code, no assets, no history. A new script, `Tools/export_devlog.py`, builds that copy; it replaces the name of the local user folder in paths and stops if an email-like string is left. The orchestrator scanned the copy: 104 files, no personal strings, no keys, one URL (the local editor link).
 - The orchestrator did not publish it. Its session's safety layer refused the command that creates a public repository, and the orchestrator does not route around a refusal. The director runs that one command himself; the orchestrator then checks the link.
 - For the record of how the agents are kept in check: executors may now run while the director plays, but publishing anything outside this machine is still his hand on the key.
+
+### 15.11.2026 00:22 - this log is public
+- The director ran the one command himself, and the documents-only copy is now a public repository: https://github.com/NikoBronsky/tip-the-scales-devlog. The orchestrator checked it without signing in: the repository page, this file and the briefs folder open, the public file is byte-identical to the export, and the rendered page shows the whole log from the first entry to the last.
+- Reading the published page showed two stale lines at the very top of this file: the title still said "working title pending", and the introduction still said that the director records the video. Both are corrected. Nobody had reread the first screen of the log since day one.
+- The copy is refreshed by `Tools/export_devlog.py` before the submission; the push stays with the director.
 
 ## Tools so far (running list)
 - Unreal Engine 5.9 (C++), with the engine plugins ModelContextProtocol and AllToolsets in the editor only.
