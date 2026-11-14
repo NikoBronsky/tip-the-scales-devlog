@@ -1,0 +1,12 @@
+# Report: day1-sound (Opus, 12.11.2026)
+
+Done: `Catch/SourceArt/Sound/make_sounds.py` (numpy, seed 20261112; two runs give identical bytes) writes 28 table files + `S_CoinBig.wav`, `README.md` (play rules + measured table), `preview_all.wav` (23.9 s), `preview_day.wav` (27.6 s). WAV 48 kHz / 16 bit / mono, 5.7 MB in all. `check_all.py`: 9 ok, 0 fail.
+Files, length s / peak dBFS (every length equals the table; no clip; 4 ms end fade): Bite 0.23/-3.0, Plop 0.16/-4.9, Bucket 0.12/-5.7, Chomp 0.22/-6.5, Over 0.90/-7.4, Bloop 0.35/-7.4, Bell 0.85/-8.5, Buy 0.28/-8.5, Burst 0.30/-9.0, Stamp 0.20/-9.0, Tear 0.32/-9.0, Coin 0.16/-9.6 (CoinBig 0.39/-9.6), Link 0.30/-11.0, Clasp 0.07/-9.6, Rumble 1.50/-11.6, Warn 0.30/-14.4, Deny 0.14/-14.4, Note 0.12/-14.4, Cast 0.26/-13.5, Flip 0.09/-12.6, Rustle 0.15/-15.8, Chord 0.54/-12.3 (0.2 per note), Pull 0.14/-18.4, Creak 0.08/-18.4 (level 0.17, game scales to 0.07), Ratchet 0.014/-15.8, Sink 0.35/-20.7, Nib 0.04/-21.4, Tick 0.03/-17.0, CoinArrive 0.04/-18.4.
+Pitch check: strongest Hz at start/end of every tonal file is within 25 % of the table and moves the right way (e.g. Bite 116 -> 1230, Over 287 -> 93, Pull 264 -> 440, Flip 754 -> 1102). Rumble ends on its 180 Hz noise band (table: noise falls linearly, tones exponentially).
+Shaped (length, pitch, character kept): Bite + quiet 2nd harmonic; saw/square low-passed (Chomp 2.4k, Over 1.8k, Rumble 400, Warn 1.5k, Deny 2.5k, Stamp 1.2k, Creak 1.6k); Creak 45 Hz stick-slip roughness; Tear/Rustle random grain; Bell faint 2.76x strike partial; Cast 40 ms swell; Bloop sweeps end at 80 %; Clasp knock 12 ms after the click; Plop sweep ends at 0.09 s.
+Changed decision 3: big coin items get their own file `S_CoinBig.wav` (third note 2f at +0.13 s) instead of a layered extra; pitch rule as Coin.
+preview_day numbers: 168 events, 6 dropped by gates (fee coin ticks 0.04 s apart, gate 0.05). Raw sum peaks -1.5 dBFS; after the master compressor (table settings, threshold moved to -2 dBFS on this scale) -1.7 dBFS, RMS -27.2 dBFS. Creak gaps go 0.42 -> 0.07 s, slow again to 0.28 when the worst hook is pulled. No second is silent; loudest seconds are bite/burst (-21 dBFS RMS).
+Questions:
+1. Hang timer for the creak rule is not in the look reference; the preview assumes 6 s (warning = last third).
+2. Bucket n (first fish 0 or 1?) and link n (first link 1?) are my reading; set in README.
+3. The table's "thunk" (UNKNOWN 7) was not made: it is not in the 28 rows.
