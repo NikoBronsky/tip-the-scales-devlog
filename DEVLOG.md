@@ -907,6 +907,9 @@ The director looked at the frame that compares the flat fish with the thin 3D fi
 - The entry texts were checked against this log: the hover line (tips exist in the view code and show in the shop frame), the music line (our own script `make_bed.py`), the tool list, the count of fish illustrations. One claim was cut back: a draft said the image generator made "every picture in the game"; the scene (raft, rods, water) is drawn by code, so the text now says "the illustrations". The lists of tools and of assets at the end of this log were brought up to date.
 - Not done and said so: the note about a network prompt on the first start was not checked on a clean machine (the text says "may"); the core description `Docs/design/core-interface.md` still lacks the changes of core 2.10-2.13; the game code branch is not merged into the documents branch. The orchestrator's weekly usage is at 97 percent, so these stay as they are unless usage allows.
 
+### 15.11.2026 10:54 - the video is on YouTube
+- The director uploaded the accepted video himself: https://youtu.be/xzqjMgTpUKE. The orchestrator checked the link without signing in: English title, 46 seconds, 1080p60 available, category Gaming.
+
 ## Tools so far (running list)
 - Unreal Engine 5.9 (C++), with the engine plugins ModelContextProtocol and AllToolsets in the editor only.
 - Claude Code with Anthropic Claude models: Fable as the orchestrator, Opus for executor tasks. One pre-jam script (`Tools/check_all.py`) was written by Sonnet and reviewed by the orchestrator.
