@@ -910,6 +910,9 @@ The director looked at the frame that compares the flat fish with the thin 3D fi
 ### 15.11.2026 10:54 - the video is on YouTube
 - The director uploaded the accepted video himself: https://youtu.be/xzqjMgTpUKE. The orchestrator checked the link without signing in: English title, 46 seconds, 1080p60 available, category Gaming.
 
+### 15.11.2026 11:05 - the game page is public
+- The director created the itch.io page himself from the prepared texts and made it public: https://bronskythemudcrab.itch.io/tip-the-scales. The orchestrator read the public page without signing in: the English text, the video, six screenshots, the cover, the archive (367 MB, Windows) and the AI disclosure with all four boxes are there. It did not download the file back to compare it.
+
 ## Tools so far (running list)
 - Unreal Engine 5.9 (C++), with the engine plugins ModelContextProtocol and AllToolsets in the editor only.
 - Claude Code with Anthropic Claude models: Fable as the orchestrator, Opus for executor tasks. One pre-jam script (`Tools/check_all.py`) was written by Sonnet and reviewed by the orchestrator.
